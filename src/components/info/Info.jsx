@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { ContactList, ContactItem, DelBtn, ContInfo } from './Info.styled'
 
 export function Info({ contacts, onDelBtnClick }) {
+    
     return (
         <ContactList>
             {contacts.map(({ id, name, number }) => (
