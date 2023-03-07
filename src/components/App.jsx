@@ -15,7 +15,10 @@ export function App () {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},]);
   const [filter, setFilter] = useState('');
  
-
+  useEffect(() => {
+   
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts])
 
   function onSubmitHandler (data) {
    
@@ -50,16 +53,6 @@ export function App () {
     
    }
 
-  
-  useEffect(() => {
-   
-    localStorage.setItem("contacts", JSON.stringify(contacts));
-  }, [contacts])
-  
-
- 
-  
-  
 return (
         <>
           <Wrap>
@@ -73,14 +66,4 @@ return (
        </>
     ) 
 
-}  // useEffect(() => {
-  //     if (!first) {
-  //     return
-  //   }
-  //   setFirst(true)
-  //      const res = 
-  //   console.log(res);
-  //   if (res) {
-  //     setContacts(res)
-  //   }
-  // }, [first])
+}
